@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Client Input Form</title>
+    <style>
+        body {
+            background-color: rgba(0, 0, 0, 0.5); /* Darken background */
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        form {
+            max-width: 600px; /* Adjust form width */
+            margin: auto;
+            background-color: rgba(0, 0, 0, 0.8); /* Darken form background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: none;
+            background-color: rgba(255, 255, 255, 0.1); /* Transparent input background */
+            color: white;
+            box-sizing: border-box;
+        }
+        select {
+            background-color: #333; /* Optional background color for the dropdown list */
+        }
+        option {
+            background-color: #333; /* Optional background color for the dropdown options */
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50; /* Green submit button */
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Please enter the required details of the customer:</h1>
+    <form method="post" action="/predict">
+        <label for="id">ID (Integer only):</label>
+        <input type="number" id="id" name="id" placeholder="Enter ID" required="required" min="0"><br>
+
+        <label for="CustomerId">Customer ID (Integer only):</label>
+        <input type="number" id="CustomerId" name="CustomerId" placeholder="Enter Customer ID" required="required" min="0"><br>
+
+        <label for="Surname">Surname:</label>
+        <input type="text" id="Surname" name="Surname" placeholder="Enter Surname" required="required"><br>
+
+        <label for="CreditScore">Credit Score (3 digits):</label>
+        <input type="number" id="CreditScore" name="CreditScore" placeholder="Enter Credit Score" required="required" min="100" max="999"><br>
+
+        <label for="Geography">Geography:</label>
+        <select id="Geography" name="Geography" required="required">
+            <option value="">Select Geography</option>
+            <option value="France">France</option>
+            <option value="Germany">Germany</option>
+            <option value="Spain">Spain</option>
+        </select><br>
+
+        <label for="Gender">Gender:</label>
+        <select id="Gender" name="Gender" required="required">
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select><br>
+
+        <label for="Age">Age (2 digits):</label>
+        <input type="number" id="Age" name="Age" placeholder="Enter Age" required="required" min="10" max="99"><br>
+
+        <label for="Tenure">Tenure (2 digits max):</label>
+        <input type="number" id="Tenure" name="Tenure" placeholder="Enter Tenure" required="required" min="0" max="99"><br>
+
+        <label for="Balance">Balance (Integer only):</label>
+        <input type="number" id="Balance" name="Balance" placeholder="Enter Balance" required="required" min="0"><br>
+
+        <label for="NumOfProducts">Number of Products (1 to 5):</label>
+        <input type="number" id="NumOfProducts" name="NumOfProducts" placeholder="Enter Number of Products" required="required" min="1" max="5"><br>
+
+        <label for="HasCreditCard">Has Credit Card (0 or 1):</label>
+        <input type="number" id="HasCreditCard" name="HasCreditCard" placeholder="Enter 0 or 1" required="required" min="0" max="1"><br>
+
+        <label for="IsActiveMember">Is Active Member (0 or 1):</label>
+        <input type="number" id="IsActiveMember" name="IsActiveMember" placeholder="Enter 0 or 1" required="required" min="0" max="1"><br>
+
+        <label for="EstimatedSalary">Estimated Salary (Integer only):</label>
+        <input type="number" id="EstimatedSalary" name="EstimatedSalary" placeholder="Enter Estimated Salary" required="required" min="0"><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
